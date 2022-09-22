@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BubbleSortController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/bubble_sort', [BubbleSortController::class, "list"])
+    ->name("bubble_sort");
