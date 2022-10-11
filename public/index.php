@@ -3,6 +3,9 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+use App\Classes\Chat;
+use Ratchet\Server\IoServer;
+
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -44,12 +47,19 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+$server = IoServer::factory(
+    new Chat(),
+    8181
+);
+
+$server->run();
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-$kernel = $app->make(Kernel::class);
+// $kernel = $app->make(Kernel::class);
 
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
+// $response = $kernel->handle(
+//     $request = Request::capture()
+// )->send();
 
-$kernel->terminate($request, $response);
+// $kernel->terminate($request, $response);

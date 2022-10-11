@@ -1,0 +1,10 @@
+Cannot load Xdebug - it was already loaded
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: host.docker.internal:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+
+Fatal error: Uncaught Error: Class "App\Classes\Chat" not found in /myapp/public/index.php on line 51
+
+Error: Class "App\Classes\Chat" not found in /myapp/public/index.php on line 51
+
+Call Stack:
+    0.1064     394912   1. {main}() /myapp/public/index.php:0
+
